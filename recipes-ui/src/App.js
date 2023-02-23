@@ -1,13 +1,30 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Navigate,
+  Routes,
+} from "react-router-dom";
+
+import MainNavigation from "./shared/components/navigation/MainNavigation";
 import "./App.css";
 
-function App() {
+const App = () => {
+  const routes = (
+    <Routes>
+      <Route path="/" exact></Route>
+      <Route path="/addrecipes" exact></Route>
+      <Navigate to="/" />
+    </Routes>
+  );
   return (
-    <div className="App">
-      <p>This will be the header</p>
-      <p>Then I will have the main container</p>
-      <p>I can add a footer why not</p>
+    <div>
+      <p>Header</p>
+      <Router>
+        <MainNavigation />
+        <main>{routes}</main>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,9 +1,10 @@
+import Header from "./shared/components/layout/Header";
 import "./App.css";
 
 const App = () => {
   return (
     <div>
-      <p>Header</p>
+      <Header />
     </div>
   );
 };
